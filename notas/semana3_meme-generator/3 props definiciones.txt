@@ -1,0 +1,3 @@
+- Las props sirven para pasar datos a un componente
+- propiedades que paso a un componente para que se configure
+- las props no se deben modificar, y deben ser modificables

@@ -1,0 +1,18 @@
+export default function Card(props) {
+	/*aqui js*/
+    console.log(props)
+    return ( /* a partir de aqui jsx*/
+        <div className="card">
+            <img src={`../images/${props.img}`} className="card--image" />
+            <div className="card--stats">
+                <img src="../images/star.png" className="card--star" />
+                <span>{props.rating}</span>
+                <span className="gray">({}) • </span>
+                <span className="gray">USA</span>
+            </div>
+            <p>Life Lessons with Katie Zaferes</p>
+            <p><span className="bold">From $136</span> / person</p>
+        </div>
+    )
+
+--> si dentro de jsx quiero escribir js entonces {todo lo que esté aquí dentro será js}

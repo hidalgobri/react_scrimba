@@ -1,0 +1,9 @@
+- El React.useState() devuelve un arreglo, el primer valor es lo que pongo dentro del
+paréntesis en el React.useState("aqui"). El segundo valor es una función
+
+- así estoy deconstruyendo el arreglo 
+
+const [isImportant, func] = React.useState("Yes")
+	- es decir obtengo cada valor del índice como variables. Ejm console.log(isImportant)
+	- los nombres que están dentro de los paréntesis pueden ser cualesquiera
+	- si es que deconstruyo un objeto, tengo que poner los nombres tal cual está en el objeto

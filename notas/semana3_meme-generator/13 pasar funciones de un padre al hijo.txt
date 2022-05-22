@@ -1,0 +1,24 @@
+//Corre el toggleFavorite cuando le de clic a la imagen que esta en el componente hijo
+PADRE
+
+function toggleFavorite() {
+        setContact(prevContact => ({
+            ...prevContact,
+            isFavorite: !prevContact.isFavorite
+        }))
+    }
+
+<Star isFilled={contact.isFavorite} handleClick={toggleFavorite} />
+
+HIJO
+
+export default function Star(props) {
+    const starIcon = props.isFilled ? "star-filled.png" : "star-empty.png"
+    return (
+        <img 
+            src={`../images/${starIcon}`} 
+            className="card--favorite"
+            onClick={props.handleClick}
+        />
+    )
+}

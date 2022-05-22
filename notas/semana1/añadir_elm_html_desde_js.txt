@@ -1,0 +1,57 @@
+const sroot = document.querySelector('#root'); //selecciono el div root
+const texto = document.createElement('h1'); // creo un elemento ha1
+texto.textContent = 'Hello trying to learn react!'; //pongo texto en el h1
+sroot.appendChild(texto); // lo que acabo de escribir pongo en el div root
+
+/*-----------------*/
+/*
+Challenge: Starting from scratch, build and render the 
+HTML for our section project. Check the Google slide for 
+what you're trying to build.
+
+We'll be adding styling to it later.
+
+Hints:
+* The React logo is a file in the project tree, so you can
+  access it by using `src="./react-logo.png" in your image
+  element
+* You can also set the `width` attribute of the image element
+  just like in HTML. In the slide, I have it set to 40px
+ */
+
+
+const img = document.createElement("img");
+const h1 = document.createElement("h1");
+const ul = document.createElement("ul");
+const li1 = document.createElement("li");
+const li2 = document.createElement("li");
+const li3 = document.createElement("li");
+const li4 = document.createElement("li");
+const li5 = document.createElement("li");
+const li1Text = document.createTextNode("Was first released in 2003")
+const li2Text = document.createTextNode("Was originlly crated by Jordan Walke")
+const li3Text = document.createTextNode("Has well over 100k stars on Github")
+const li4Text = document.createTextNode("Is maintained by Facebook")
+const li5Text = document.createTextNode("Powers thousands of enterprise apps, including mobile apps")
+const h1text = document.createTextNode("Fun facts about React");
+
+
+
+img.src = "./react-logo.png";
+
+li1.appendChild(li1Text);
+li2.appendChild(li2Text);
+li3.appendChild(li3Text);
+li4.appendChild(li4Text);
+li5.appendChild(li5Text);
+ul.appendChild(li1);
+ul.appendChild(li2);
+ul.appendChild(li3);
+ul.appendChild(li4);
+ul.appendChild(li5);
+
+h1.appendChild(h1text);
+
+document.getElementById("root").appendChild(img)
+document.getElementById("root").appendChild(h1)
+document.getElementById("root").appendChild(ul)

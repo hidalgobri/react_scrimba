@@ -1,0 +1,3 @@
+- son propiedades manejadas por los componentes que se pueden cambiar
+- son propiedades que se crean y pueden ser cambiadas dentro de un componente o una funcion
+- cada vez que quiero cambiar valores y que quiero que se muestren en la pantalla, debo usar state

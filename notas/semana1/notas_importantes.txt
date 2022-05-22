@@ -1,0 +1,3 @@
+/ means the root of the current drive;
+./ means the current directory;
+../ means the parent of the current directory.

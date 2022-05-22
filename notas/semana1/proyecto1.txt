@@ -1,0 +1,22 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+nav{
+    background-color: black;
+    display: flex;
+    align-items: center;
+}
+nav > h2{
+    color: #61DAFB;
+}
+nav > h3{
+    color: #DEEBF8;
+    margin-right: auto
+}
+.nav-img{
+ width: 50px;   
+}

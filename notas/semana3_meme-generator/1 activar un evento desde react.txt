@@ -1,0 +1,26 @@
+/*Para saber más eventos https://reactjs.org/docs/events.html#mouse-events
+si pongo esto <button onClick={handleClick()}
+en lugar de esto <button onClick={handleClick}
+entonces solo se ejcuta la primera vez
+*/
+import React from "react"
+
+export default function App() {
+    function handleClick() {
+        console.log("I was clicked!")
+    }
+    
+    /**
+     * Challenge: 
+     * Log something to the console when the mouse hovers over the image
+     */
+    function hover(){
+        console.log("It was hover!")    
+    }
+    return (
+        <div className="container">
+            <img src="https://picsum.photos/640/360" />
+            <button onClick={handleClick} onMouseOver={hover}>Click me</button>
+        </div>
+    )
+}

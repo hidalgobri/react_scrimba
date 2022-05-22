@@ -1,0 +1,4 @@
+- hacer bordes imagen redonda
+	border-radius: 9px;
+- span el width por default se ajusta al content. y si pongo más spans
+se alinean en linea
