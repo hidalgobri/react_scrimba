@@ -1,0 +1,22 @@
+/*
+el problema es que el componentes se vuelve a renderizar cada que lee un nuevo dato.
+Esto pasa porque cada vez que renderizo el componente llamo al fetch, el fetch cada vez actualiza el state
+entonces se vuelve a renderizar la componente. Después el ciclo se sigue repitiendo
+*/
+import React from "react"
+
+export default function App() {
+    const [starWarsData, setStarWarsData] = React.useState({})
+    
+    console.log("Component rendered")
+    
+    fetch("https://swapi.dev/api/people/1")
+        .then(res => res.json())
+        .then(data => setStarWarsData(data))
+    
+    return (
+        <div>
+            <pre>{JSON.stringify(starWarsData, null, 2)}</pre>
+        </div>
+    )
+}

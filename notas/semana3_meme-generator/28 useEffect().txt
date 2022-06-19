@@ -1,0 +1,11 @@
+- useEffect es un hook.
+- Los hooks sirven para hacer algo con el state, cuando se va a utilizar algo que no está dentro del alcance
+de react, ejm: api calls, suscriptions, etc
+- el useEffect impide que el hacer algo fuera del mundo react, afecte al renderizado de las componentes, por eso
+se ejecuta después del renderizado
+- recibe dos parámetro useEffect( funcion, dependencyArray)
+- la función del useEffect se va a ejecutar después de que todos los componentes se rendericen.
+- en el dependency array pongo los nombre de las variables que  cuando cambien, ejecutarán de nuevo la funcion
+- si pongo un dependency array vacío, significa que el use effect se ejecutará solo una vez, porque no debe
+estar pendiente del cambio que tendrá alguna variable.
+- el useEffect, recuerda el estado anterior que tenia el dependencyArray

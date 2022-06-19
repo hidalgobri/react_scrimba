@@ -1,0 +1,2 @@
+{ siTrue && muestraEsto}
+si es false solo ignora y no ejecuta nada

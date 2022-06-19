@@ -1,0 +1,40 @@
+/*
+1. se ejecuta la función
+2. se renderiza el componente
+3. se ejecuta el useEffect
+
+//ejm si cambia el state
+*recordar que cuando se actualiza el state, se renderiza de nuevo la componete
+ antes de actualizar el state count = 0
+ - se actualzia el state a 1
+ - se renderiza la componente
+ - useEffect compara el estado anterior con el actual 0 == 1
+ - si hubo cambios, ejecuta la función del use state
+*/
+import React from "react"
+
+export default function App() {
+    const [starWarsData, setStarWarsData] = React.useState({})
+    const [count, setCount] = React.useState(0)
+    
+    console.log("Component rendered")
+    
+    /**
+     * Challenge: re-write the useEffect
+     * It should run any time `count` changes
+     * For now, just console.log("Effect function ran")
+     */
+    React.useEffect(() => {
+        console.log("Effect function ran")
+    }, [count])
+    
+    return (
+        <div>
+            <pre>{JSON.stringify(starWarsData, null, 2)}</pre>
+            <h2>The count is {count}</h2>
+            <button onClick={() => setCount(prevCount => prevCount + 1)}>Add</button>
+        </div>
+    )
+}
+
+

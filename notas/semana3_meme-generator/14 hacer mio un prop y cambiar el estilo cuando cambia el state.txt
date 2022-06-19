@@ -1,0 +1,42 @@
+HIJO-----------------------------
+export default function Box(props) {
+    /**
+     * Challenge: Create state controlling whether
+     * this box is "on" or "off". Use the incoming
+     * `props.on` to determine the initial state.
+     * 
+     * Create an event listener so when the box is clicked,
+     * it toggles from "on" to "off".
+     * 
+     * Goal: clicking each box should toggle it on and off.
+     */
+    const [colorBox, setColorBox] = React.useState(props.on)
+
+    const styles = {
+        backgroundColor: colorBox ? "#222222" : "transparent"
+    }
+
+    function changeColor() {
+        setColorBox(
+            prevState => prevState = !prevState
+        )
+    }
+    return (
+        <div onClick={changeColor} style={styles} className="box"></div>
+    )
+}
+
+PADRE--------------------
+export default function App() {
+    const [squares, setSquares] = React.useState(boxes)
+    
+    const squareElements = squares.map(square => (
+        <Box key={square.id} on={square.on} />
+    ))
+    
+    return (
+        <main>
+            {squareElements}
+        </main>
+    )
+}
