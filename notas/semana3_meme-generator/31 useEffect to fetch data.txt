@@ -1,0 +1,24 @@
+/*
+no hay dependencias de las que debas preocuparte, se renderiza una vez
+*/
+ const [starWarsData, setStarWarsData] = React.useState({})
+ const [count, setCount] = React.useState(0)
+
+ React.useEffect(function() {
+        console.log("Effect ran")
+        fetch("https://swapi.dev/api/people/1")
+            .then(res => res.json())
+            .then(data => setStarWarsData(data))
+    }, [])
+/*
+cuando count cambie el state, actualiza el state
+*/
+ const [starWarsData, setStarWarsData] = React.useState({})
+ const [count, setCount] = React.useState(0)
+
+ React.useEffect(function() {
+        console.log("Effect ran")
+        fetch("https://swapi.dev/api/people/1")
+            .then(res => res.json())
+            .then(data => setStarWarsData(data))
+    }, [count])

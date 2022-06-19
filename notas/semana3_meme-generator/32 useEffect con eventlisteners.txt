@@ -1,0 +1,36 @@
+/*
+- de que trata:en la pantalla aparece el tamaño de la screen, cuando una variable sea true.
+Deja de ser true cuando el da click sobre un botón
+- Como en el use effect puedo poner las cosas de que no están al alcance de react (fetch data,
+event listeners, etc), ahí pongo el window listener resize
+- creo un state que guarde el tamaño de la pantalla
+- al hacer todo esto surge un problema, cuando ya no quiero que aparezca el tamaño en pantalla, 
+el listener sigue prendido, y sigue atento a cuando se haga resize
+- este problema se llama memory leak
+- para evitarlo, la función que se usa en el useEffect, debo usar el removeEventListener
+y devolver la misma función 
+*/
+import React from "react"
+
+export default function WindowTracker() {
+    
+    const [windowWidth, setWindowWidth] = React.useState(window.innerWidth)
+    
+    React.useEffect(() => {
+        function watchWidth() {
+            console.log("Setting up...")
+            setWindowWidth(window.innerWidth)
+        }
+        
+        window.addEventListener("resize", watchWidth)
+        
+        return function() {
+            console.log("Cleaning up...")
+            window.removeEventListener("resize", watchWidth)
+        }
+    }, [])
+    
+    return (
+        <h1>Window width: {windowWidth}</h1>
+    )
+}
