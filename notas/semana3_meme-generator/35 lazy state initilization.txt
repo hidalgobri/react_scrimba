@@ -1,0 +1,15 @@
+/*
+- Cada vez que hay un cambio en el state, se renderiza la componente y su padre.
+- Cuando en el useState inicializo la variable con un valor, se ejecuta una sola vez,
+la primera vez que se renderiza la componente
+- Cuando en el useState inicializo la variable con código (ejm:localStorage.setItem("notes", JSON.stringify(notes))),
+ se ejecuta cada que se renderiza el componente. Para evitar esto, se usa el lazy 
+state initialization, que es poner como function ese código. De esta manera se ejecuta una sola vez,
+la primera vez que se renderiza la componente
+Ejm:
+  const [notes, setNotes] = React.useState(
+        ()=>JSON.parse(localStorage.getItem("notes")) || []
+    )
+- por qué hacer esto: porque ejecutar ese código, cada vez que se renderiza la componente
+es muy pesado para el browser
+*/
